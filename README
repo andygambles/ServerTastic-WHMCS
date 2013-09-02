@@ -1,0 +1,32 @@
+** About This Module **
+
+This module is completely Open Source. You are free to modify it to as required provided you maintain this README. This module is designed to provide integration between WHMCS and the ServerTastic SSL Reseller program at https://reseller.servertastic.com
+
+** Installation Instructions **
+To install, upload the contents of the servertasticssl folder to /modules/servers/servertasticssl/ (this will need creating)
+
+** Product Configuration Instructions **
+
+To setup a product, go to Setup > Products/Services > Create New Product
+You should set the Product Type to Other Product/Service and enter a name of your choice. Click Continue to manage Pricing and Configuration.
+On the Module Settings tab, select "Servertasticssl" from the available Modules dropdown selection and enter the Servertastic Reseller API Key and select one of the Certificate Types available from the dropdown selection that this product should issue
+You can check the "Test Mode" checkbox to test the module by connecting to Servertastic SSL Sandbox Test-api.
+
+If you would like the user to select the certificate type and/or number of years from the order form, you can create Configurable Options on the product as follows:
+
+Certificate Type (This selection from Order Form if available will override the certificate type set in Module Settings)
+Years (Maximum number of years for a particular certificate type is found after brand name followed by | on the Certificate Type in Module Settings tab)
+Servers Count
+SAN Count
+
+To know more about managing Configurable options, please refer to
+
+http://docs.whmcs.com/Addons_and_Configurable_Options
+
+To test the client area ordering process, login to the client area and visit the cart. Place the order as normal, and once paid (or activated without payment) an email will be sent to the customer with subject "SSL Certificate Configuration Required" and a invitation link to complete the SSL Certificate enrollment process.
+
+** Admin Area Functions **
+From any SSL Product in the admin area, the following actions can be performed:
+1. SSL Certificate Configuration Required email with the invite link can be resent by clicking Resend Configuration Email
+2. A Certificate if already provisioned can be cancelled by clicking on Terminate button.
+3. Certificate realtime status and Servertastic Order ID can also be seen from the Admin Area service details. Certificate Approver Email can also be changed from here.
